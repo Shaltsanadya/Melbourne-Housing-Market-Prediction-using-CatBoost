@@ -72,7 +72,7 @@ elif selected2 == "Prediction":
     # Tenure Months Prediction Page
     st.header("Real Estate Market Price Predictions")
     
-    df_sample = pd.read_csv("melb_data.csv")
+    df_sample = pd.read_csv("real_estate.csv")
 
     uploaded_file = st.file_uploader("Choose a file")
 
@@ -208,8 +208,8 @@ elif selected2 == "Prediction":
             # Display the prediction
             st.metric(label='Predicted Price', value=f"{int(prediction)} AUD")    
 elif selected2 == "Model Evaluation":
-    # load df_churn.csv as df
-    df = pd.read_csv('df_house.csv')
+    # load .csv as df
+    df = pd.read_csv('df_final.csv')
     
     df.sort_values(by=['Price'], inplace=True, ascending=True)
     
