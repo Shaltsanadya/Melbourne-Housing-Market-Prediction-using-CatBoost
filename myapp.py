@@ -55,7 +55,7 @@ if selected2 == "Real Estate Analysis":
     <!-- Membungkus elemen dengan div yang memiliki kelas "center" -->
     <div class="center">
         <tableau-viz id="tableauViz"
-        src='https://public.tableau.com/views/RealestatemarketinAustraliadashboard/Dashboard1'
+        src='https://public.tableau.com/views/RealestatemarketinAustraliadashboard/Dashboard1?:display_count=n&:origin=viz_share_link'
         device="desktop"
         toolbar="hidden" hide-tabs>
         </tableau-viz>
