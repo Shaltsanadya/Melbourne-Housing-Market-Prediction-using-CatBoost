@@ -1,3 +1,18 @@
+# Importing necessary libraries for creating a Streamlit app
+import streamlit as st
+import pandas as pd
+import pickle
+from streamlit.components.v1 import html
+import sys
+sys.path.insert(1, "C:/past/your/coppied/path/here/streamlit_option_menu")
+from streamlit_option_menu import option_menu
+import numpy as np
+import matplotlib.image as plt
+import os
+import plotly.figure_factory as ff
+import plotly.express as px
+from sklearn.preprocessing import LabelEncoder
+
 # Load your trained CatBoost model
 model_cb = pickle.load(open('housingmarket.sav', 'rb'))
 
@@ -57,7 +72,7 @@ elif selected2 == "Prediction":
     # Tenure Months Prediction Page
     st.header("Real Estate Market Price Predictions")
     
-    df_sample = pd.read_csv("melb_data.csv")
+    df_sample = pd.read_csv("real_estate.csv")
 
     uploaded_file = st.file_uploader("Choose a file")
 
@@ -193,8 +208,9 @@ elif selected2 == "Prediction":
             # Display the prediction
             st.metric(label='Predicted Price', value=f"{int(prediction)} AUD")    
 elif selected2 == "Model Evaluation":
-    # load df_churn.csv as df
-    df = pd.read_csv('df_house.csv')
+    
+    # load .csv as df
+    df = pd.read_csv('df_final.csv')
     
     df.sort_values(by=['Price'], inplace=True, ascending=True)
     
