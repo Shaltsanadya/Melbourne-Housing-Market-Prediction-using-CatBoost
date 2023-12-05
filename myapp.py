@@ -16,16 +16,16 @@ from sklearn.preprocessing import LabelEncoder
 # Load your trained CatBoost model
 model_cb = pickle.load(open('housingmarket.sav', 'rb'))
 
-st.set_page_config(page_title="REMDA",
-                   page_icon="🔍",
+st.set_page_config(page_title="PREMIS",
+                   page_icon="🏘️",
                    layout="wide")
 
-st.markdown("<h1 style='text-align: center;'>REMDA</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center;'>Real Estate Market - Dashboard Analysis</h3>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>PREMIS</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Prediction of Real Estate Market in Dashboard Analysis</h3>", unsafe_allow_html=True)
 
 # Create a horizontal menu with the 'option_menu' custom component
 selected2 = option_menu(None, ["Real Estate Analysis", "Prediction", "Model Evaluation"], 
-    icons=['home-fill', 'stars', 'gear-fill'], 
+    icons=['house-fill', 'stars', 'gear-fill'], 
     menu_icon="cast", default_index=0, orientation="horizontal")
 
 if selected2 == "Real Estate Analysis":
@@ -55,7 +55,7 @@ if selected2 == "Real Estate Analysis":
     <!-- Membungkus elemen dengan div yang memiliki kelas "center" -->
     <div class="center">
         <tableau-viz id="tableauViz"
-        src='https://public.tableau.com/app/profile/shaltsa.nadya/viz/RealestatemarketinAustraliadashboard/Dashboard1'
+        src='https://public.tableau.com/views/RealestatemarketinAustraliadashboard/Dashboard1'
         device="desktop"
         toolbar="hidden" hide-tabs>
         </tableau-viz>
@@ -208,7 +208,7 @@ elif selected2 == "Prediction":
             # Display the prediction
             st.metric(label='Predicted Price', value=f"{int(prediction)} AUD")    
 elif selected2 == "Model Evaluation":
-    
+
     # load .csv as df
     df = pd.read_csv('df_final.csv')
     
